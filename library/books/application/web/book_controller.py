@@ -12,12 +12,12 @@ from library.books.infrastructure.book.book_repository_adapter import BookReposi
 class BookController(Resource):
     service = BookService(repository=BookRepositoryAdapter())
 
-    def get(self, book_id: str):
+    def find_by(self, book_id: str):
         book = self.service.find_by_id(book_id)
 
         return BookFoundResponse.create(book), 200
 
-    def post(self):
+    def create(self):
         json = request.get_json()
 
         create_book_request = CreateBookRequest(json)
