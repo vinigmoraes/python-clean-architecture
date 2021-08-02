@@ -3,19 +3,19 @@ from flask_restful import Resource
 
 from library.books.application.web.requests.create_book_request import CreateBookRequest
 from library.books.application.web.requests.update_book_request import UpdateBookRequest
+from library.books.application.web.responses import book_found_response
 from library.books.application.web.responses.book_created_response import BookCreatedResponse
-from library.books.application.web.responses.book_found_response import BookFoundResponse
 from library.books.core.books.book_service import BookService
-from library.books.infrastructure.book.book_repository_adapter import BookRepositoryAdapter
 
 
 class BookController(Resource):
-    service = BookService(repository=BookRepositoryAdapter())
+    def __init__(self, service: BookService):
+        self.service = service
 
     def find_by(self, book_id: str):
         book = self.service.find_by_id(book_id)
 
-        return BookFoundResponse.create(book), 200
+        return book_found_response.create(book), 200
 
     def create(self):
         json = request.get_json()

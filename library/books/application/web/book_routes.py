@@ -2,11 +2,14 @@ import uuid
 
 from flask import Blueprint
 
+from library.books.application.config.containers import Container
 from library.books.application.web.book_controller import BookController
 
 books_routes = Blueprint("books_routes", __name__)
 
-controller = BookController()
+container = Container()
+
+controller = BookController(service=container.service)
 
 
 @books_routes.route("/books/<string:book_id>", methods=['GET'])

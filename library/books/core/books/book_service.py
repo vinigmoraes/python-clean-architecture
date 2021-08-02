@@ -21,7 +21,7 @@ class BookService:
         return book
 
     def find_by_id(self, book_id: uuid) -> Book:
-        book = self.repository.find_by_id(book_id)
+        book: Book = self.repository.find_by_id(book_id)
 
         return book
 
