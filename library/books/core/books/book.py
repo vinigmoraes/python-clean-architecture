@@ -1,6 +1,7 @@
 import uuid
 
-from library.books.application.web.requests.create_book_request import CreateBookRequest
+from library.books.core.books.ports.dto.create_book_dto import CreateBookDTO
+from library.books.core.books.ports.dto.update_book_dto import UpdateBookDTO
 
 
 class Book:
@@ -15,12 +16,12 @@ class Book:
         self.isbn = isbn
 
     @classmethod
-    def create(cls, request: CreateBookRequest):
-        return Book(request.name, request.pages, request.isbn)
+    def create(cls, dto: CreateBookDTO):
+        return cls(dto.name, dto.pages, dto.isbn)
 
-    def update(self, request):
-        self.name = request.name if request.name is None else self.name
-        self.pages = request.pages if request.name is None else self.pages
-        self.isbn = request.isbn if request.name is None else self.isbn
+    def update(self, dto: UpdateBookDTO):
+        self.name = dto.name if dto.name is None else self.name
+        self.pages = dto.pages if dto.name is None else self.pages
+        self.isbn = dto.isbn if dto.name is None else self.isbn
 
         return self
