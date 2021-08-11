@@ -1,12 +1,12 @@
-import dataclasses
+from dataclasses import dataclass
 
-import dataclasses_json
+from dataclasses_json import dataclass_json
 
 from library.domain.books.book import Book
 
 
-@dataclasses_json.dataclass_json
-@dataclasses.dataclass
+@dataclass_json
+@dataclass
 class BookFoundResponse:
     id: str
     name: str

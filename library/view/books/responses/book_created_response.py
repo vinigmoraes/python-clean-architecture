@@ -1,9 +1,8 @@
-import dataclasses
+from dataclasses_json import dataclass_json
+from dataclasses import dataclass
 
-import dataclasses_json
 
-
-@dataclasses_json.dataclass_json()
-@dataclasses.dataclass
+@dataclass_json
+@dataclass
 class BookCreatedResponse:
     id: str
