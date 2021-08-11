@@ -1,7 +1,7 @@
 import uuid
 
-from library.books.core.books.ports.dto.create_book_dto import CreateBookDTO
-from library.books.core.books.ports.dto.update_book_dto import UpdateBookDTO
+from library.domain.books.ports.dto.create_book_dto import CreateBookDTO
+from library.domain.books.ports.dto.update_book_dto import UpdateBookDTO
 
 
 class Book:
@@ -25,3 +25,6 @@ class Book:
         self.isbn = dto.isbn if dto.name is None else self.isbn
 
         return self
+
+    def __getitem__(self, item):
+        return getattr(self, item)

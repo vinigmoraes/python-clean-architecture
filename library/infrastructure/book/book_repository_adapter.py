@@ -1,7 +1,7 @@
 import uuid
 
-from library.books.core.books.book import Book
-from library.books.core.books.ports.book_repository import BookRepository
+from library.domain.books.book import Book
+from library.domain.books.ports.book_repository import BookRepository
 
 
 class BookRepositoryAdapter(BookRepository):

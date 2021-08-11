@@ -1,16 +1,16 @@
 import uuid
 
-from library.books.application.web.requests.update_book_request import UpdateBookRequest
-from library.books.core.books.book import Book
-from library.books.core.books.ports.book_repository import BookRepository
-from library.books.core.books.ports.dto.create_book_dto import CreateBookDTO
-from library.books.core.books.ports.dto.update_book_dto import UpdateBookDTO
+from injector import inject
+
+from library.domain.books.book import Book
+from library.domain.books.ports.book_repository import BookRepository
+from library.domain.books.ports.dto.create_book_dto import CreateBookDTO
+from library.domain.books.ports.dto.update_book_dto import UpdateBookDTO
 
 
 class BookService:
 
-    repository: BookRepository
-
+    @inject
     def __init__(self, repository: BookRepository):
         self.repository = repository
 

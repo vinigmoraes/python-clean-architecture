@@ -1,6 +1,6 @@
 import uuid
 
-from library.books.core.books.book import Book
+from library.domain.books.book import Book
 
 
 class BookRepository:
