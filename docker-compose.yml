@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  application:
+    container_name: application
+    restart: always
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+

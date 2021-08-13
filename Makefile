@@ -1,2 +1,5 @@
 run:
-	cd library/application; export FLASK_ENV=development; flask run --port=8080
+	poetry export --without-hashes -f requirements.txt > requirements.txt
+	docker-compose up --build -d
+	rm -f requirements.txt
+
