@@ -7,7 +7,7 @@ from library.view.books.book_controller import BookController
 from library.view.books.book_routes import book_routes
 from library.view.error_handler import error_handler
 
-app = Flask(__name__)
+app = Flask(__name__, instance_path="/{project_folder_abs_path}/instance")
 api = Api(app)
 
 if __name__ == '__main__':

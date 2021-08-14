@@ -1,9 +1,5 @@
 CREATE_BOOK_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "name": {"type": "string"},
-        "pages": {"type": "number"},
-        "isbn": {"type": "string"},
-    },
-    "required": ["name", "pages", "isbn"]
+    "name": {"type": "string", "required": True},
+    "pages": {"type": "number", "required": True},
+    "isbn": {"type": "string", "required": True}
 }
