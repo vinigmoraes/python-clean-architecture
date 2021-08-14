@@ -80,18 +80,6 @@ dotenv = ["python-dotenv"]
 
 [[package]]
 category = "main"
-description = "Decorator for REST endpoints in flask. Validate JSON request data."
-name = "flask-expects-json"
-optional = false
-python-versions = "*"
-version = "1.6.0"
-
-[package.dependencies]
-flask = ">=1.0.2"
-jsonschema = ">=3.0.1"
-
-[[package]]
-category = "main"
 description = "Adds Injector, a Dependency Injection framework, support to Flask."
 name = "flask-injector"
 optional = false
@@ -277,7 +265,7 @@ version = "2.0.1"
 watchdog = ["watchdog"]
 
 [metadata]
-content-hash = "a5f08342384c2cdf819e982c4d6f0b8f5b19109b1cd41eb80686d32e16927f10"
+content-hash = "b702daa0170a17b1bc5553ddee7ba1c9a6c1bee2161dc8d7a47fd250f81a7ede"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -304,9 +292,6 @@ dataclasses-json = [
 flask = [
     {file = "Flask-2.0.1-py3-none-any.whl", hash = "sha256:a6209ca15eb63fc9385f38e452704113d679511d9574d09b2cf9183ae7d20dc9"},
     {file = "Flask-2.0.1.tar.gz", hash = "sha256:1c4c257b1892aec1398784c63791cbaa43062f1f7aeb555c4da961b20ee68f55"},
-]
-flask-expects-json = [
-    {file = "flask-expects-json-1.6.0.tar.gz", hash = "sha256:0bab1f345813a7f632657c14156f21eaac72511fe9e7fa7e6f406a0c7a22ee7a"},
 ]
 flask-injector = [
     {file = "Flask-Injector-0.12.3.tar.gz", hash = "sha256:82f5bf1245f6fbdbd19eeea4289fe35a3417a8ce05f710847a2f96b771a8085c"},

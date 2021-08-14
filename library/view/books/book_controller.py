@@ -7,6 +7,8 @@ from library.domain.books.ports.dto.create_book_dto import CreateBookDTO
 from library.domain.books.ports.dto.update_book_dto import UpdateBookDTO
 from library.view.books.responses.book_created_response import BookCreatedResponse
 from library.view.books.responses.book_found_response import BookFoundResponse
+from library.view.books.schemas.schema_validator import validate_json
+from library.view.books.schemas.schemas import CREATE_BOOK_SCHEMA
 
 
 class BookController(Resource):
@@ -22,6 +24,8 @@ class BookController(Resource):
 
     def create(self):
         json = request.get_json()
+
+        validate_json(CREATE_BOOK_SCHEMA, json)
 
         dto = CreateBookDTO.from_json(json)
 
