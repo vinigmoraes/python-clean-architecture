@@ -15,6 +15,7 @@ api = Api(app)
 jwt = JWTManager(app)
 app.config['SECRET_KEY'] = 'some-secret'
 
+
 if __name__ == '__main__':
     injector = Injector([BookModule])
 

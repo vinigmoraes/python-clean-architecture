@@ -27,4 +27,4 @@ class AuthController:
                 additional_claims=claims
             )
 
-            return jsonify(acess_token=access_token)
+            return jsonify(acess_token=access_token), 200
