@@ -22,7 +22,7 @@ class BookController(Resource):
 
         return BookFoundResponse.from_book(book).to_json(), 200
 
-    def create(self):
+    def register(self):
         json = request.get_json()
 
         validate_json(CREATE_BOOK_SCHEMA, json)

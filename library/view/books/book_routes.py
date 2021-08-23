@@ -11,7 +11,7 @@ def book_routes(app, controller: BookController):
     @app.route("/books", methods=['POST'])
     @jwt_required()
     def create_book():
-        return controller.create()
+        return controller.register()
 
     @app.route("/books/<string:book_id>", methods=['PUT'])
     def update_book(book_id):
