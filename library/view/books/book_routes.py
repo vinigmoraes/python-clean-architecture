@@ -1,3 +1,4 @@
+from flask_jwt import jwt_required
 
 from library.view.books.book_controller import BookController
 
@@ -8,6 +9,7 @@ def book_routes(app, controller: BookController):
         return controller.find_by(book_id)
 
     @app.route("/books", methods=['POST'])
+    @jwt_required()
     def create_book():
         return controller.create()
 
