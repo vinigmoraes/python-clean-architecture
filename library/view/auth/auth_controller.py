@@ -28,3 +28,5 @@ class AuthController:
             )
 
             return jsonify(acess_token=access_token), 200
+
+        return jsonify(message="Invalid credentials"), 400

@@ -10,7 +10,7 @@ from library.view.books.book_controller import BookController
 from library.view.books.book_routes import book_routes
 from library.view.error_handler import error_handler
 
-app = Flask(__name__, instance_path="/{project_folder_abs_path}/instance")
+app = Flask(__name__, instance_path="/{project_folder_abs_path}/instance", template_folder="templates")
 api = Api(app)
 jwt = JWTManager(app)
 app.config['SECRET_KEY'] = 'some-secret'
